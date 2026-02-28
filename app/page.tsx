@@ -20,7 +20,7 @@ interface FieldDef {
 
 // ─── API ────────────────────────────────────────────────────────────────────
 async function predictFraud(data: FormData): Promise<PredictResponse> {
-  const response = await fetch("https://ml-project-two-olive.vercel.app/predict", {
+  const response = await fetch("https://ml-project-two-olive.vercel.app", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -718,7 +718,7 @@ export default function FraudGuard() {
               </div>
               <hr className="div" />
               <div className="mono" style={{ fontSize: 12, color: "#1f2937", lineHeight: 1.9 }}>
-                Endpoint: POST ml-project-two-olive.vercel.app/predict<br />
+                Endpoint: POST ml-project-two-olive.vercel.app<br />
                 Features: 28 · Most values normalized 0–1
               </div>
             </div>
