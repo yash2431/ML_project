@@ -1,5 +1,5 @@
 
-const API_BASE_URL = 'https://ml-project-two-olive.vercel.app';
+const API_BASE_URL = 'https://backend-delta-dusky-25.vercel.app';
 
 export async function predictFraud(features) {
     try {
