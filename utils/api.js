@@ -1,5 +1,5 @@
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://ml-project-two-olive.vercel.app';
 
 export async function predictFraud(features) {
     try {
