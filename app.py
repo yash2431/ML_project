@@ -4,6 +4,7 @@ from flask_cors import CORS
 import joblib
 import numpy as np
 import traceback
+import os
 
 # ==========================================
 # STEP 2: Initialize Flask App
@@ -20,7 +21,10 @@ CORS(app)
 # ==========================================
 
 try:
-    model = joblib.load("model.pkl")
+    # Use absolute path relative to this script so it works in Vercel's serverless env
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(BASE_DIR, "model.pkl")
+    model = joblib.load(model_path)
     print("Model loaded successfully.")
 except Exception as e:
     print("Error loading model:", e)
